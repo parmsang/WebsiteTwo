@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     if @project.update(update_params)
       redirect_to showcase_path
     else
-      flash[:notice] = @project.errors
+      flash[:notice] = @project.errors.full_messages
       redirect_to edit_project_path(@project.id)
     end
   end
