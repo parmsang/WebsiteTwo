@@ -1,0 +1,11 @@
+<%= form_for @project do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  <%= f.file_field :image %>
+  <%= f.submit 'Edit project'%>
+<% end %>
+<%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete %>

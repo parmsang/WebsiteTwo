@@ -2,3 +2,4 @@
 <p><%= project.description %></p>
 <img src="<%= project.image %>">
 <a href="<%= project.link %>">view more</a>
+<%= link_to "Edit #{project.title}", edit_project_path(project.id) %>
