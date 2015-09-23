@@ -1,0 +1,9 @@
+<% if @projects.any? %>
+  <% @projects.each do |project| %>
+    <%= render partial: 'partials/project', locals: {project: project} %>
+  <% end %>
+<% else %>
+  <h1>No projects in showcase!</h1>
+<% end %>
+
+<a href='projects/new'>Add a project</a>
