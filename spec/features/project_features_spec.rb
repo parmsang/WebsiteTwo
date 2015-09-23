@@ -28,4 +28,32 @@ feature 'showcase' do
       expect(page).to have_xpath "//img[contains(@src,'test_photo.png')]"
     end
   end
+
+  context 'creating projects' do
+    scenario 'prompts user to fill out a form, then displays the new project' do
+      visit '/'
+      click_link 'Add a project'
+      fill_in 'Title', with: 'Red Cross'
+      fill_in 'Description', with: 'Helps people'
+      fill_in 'Link', with: 'www.zombo.com'
+      page.attach_file('project[image]', Rails.root + 'spec/fixtures/test_photo.png')
+      click_button 'Create Project'
+      expect(page).to have_content 'Red Cross'
+      expect(page).to have_content 'Helps people'
+      expect(page).to have_xpath("//img[contains(@src,'test_photo.png')]")
+      expect(page).to have_link("view more", href: 'www.zombo.com')
+      expect(current_path).to eq '/'
+    end
+    context 'it displays error when title/description/link is not valid' do
+      scenario 'title and description must be present' do
+        visit '/'
+        click_link 'Add a project'
+        click_button 'Create Project'
+        expect(page).to have_content 'Title can\'t be blank'
+        expect(page).to have_content 'Description can\'t be blank'
+      end
+    end
+  end
+
+
 end
