@@ -8,3 +8,4 @@
   <%= f.file_field :image %>
   <%= f.submit 'Edit project'%>
 <% end %>
+<%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete %>

@@ -30,6 +30,7 @@ feature 'showcase' do
   end
 
   context 'editing projects' do
+
     before do
       @project = Project.new(title: 'oxfam')
       @project.link = 'www.zombo.com'
@@ -37,6 +38,7 @@ feature 'showcase' do
       @project.image = Rack::Test::UploadedFile.new('spec/fixtures/test_photo.png', 'image/png')
       @project.save
     end
+
     scenario 'have the option for edit' do
       visit '/'
       expect(page).to have_link("Edit oxfam")
@@ -64,4 +66,31 @@ feature 'showcase' do
       expect(page).to have_xpath "//img[contains(@src,'other_photo.png')]"
     end
   end
+
+  context 'can delete projects from showcase' do
+
+    before do
+      @project = Project.new(title: 'oxfam')
+      @project.link = 'www.zombo.com'
+      @project.description = 'blah-blah'
+      @project.image = Rack::Test::UploadedFile.new('spec/fixtures/test_photo.png', 'image/png')
+      @project.save
+    end
+
+    scenario 'have an option to delete' do
+      visit '/'
+      click_link 'Edit oxfam'
+      expect(page).to have_link 'Delete oxfam'
+    end
+
+    scenario 'can delete project' do
+      visit '/'
+      click_link 'Edit oxfam'
+      expect{click_link 'Delete oxfam'}.to change(Project, :count).by(-1)
+      expect(page).to have_content 'Project successfully deleted'
+      expect(page).to have_content 'No projects in showcase!'
+    end
+
+  end
+
 end

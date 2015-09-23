@@ -6,7 +6,21 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    @project.update(update_params)
+    if @project.update(update_params)
+      redirect_to showcase_path
+    else
+      flash[:notice] = @project.errors
+      redirect_to edit_project_path(@project.id)
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.destroy
+      flash[:notice] = 'Project successfully deleted'
+    else
+      flash[:notice] = 'An error occurred: project not deleted'
+    end
     redirect_to showcase_path
   end
 
