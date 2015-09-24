@@ -13,7 +13,7 @@ describe Charity, type: :model do
     expect(charity).to have(1).error_on(:status)
   end
 
-  it 'is not valid unless it has a status' do
+  it 'is not valid unless it has a charity number' do
     charity = Charity.create(number: '')
     expect(charity).to have(1).error_on(:number)
   end
