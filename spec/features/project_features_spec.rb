@@ -85,7 +85,7 @@ feature 'showcase' do
       fill_in 'Description', with: 'help me!'
       fill_in 'Link', with: 'www.wwf.com'
       attach_file 'project_image', Rails.root.join('spec/fixtures/other_photo.png')
-      click_button 'Edit project'
+      click_button 'Edit Project'
       expect(page).to have_content('nspca')
       expect(page).to have_link("view more", href: 'www.wwf.com')
       expect(page).to have_content('help me!')

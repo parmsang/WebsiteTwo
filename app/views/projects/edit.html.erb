@@ -6,6 +6,6 @@
   <%= f.label :link %>
   <%= f.text_field :link %>
   <%= f.file_field :image %>
-  <%= f.submit 'Edit project'%>
+  <%= f.submit 'Edit Project'%>
 <% end %>
 <%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete %>

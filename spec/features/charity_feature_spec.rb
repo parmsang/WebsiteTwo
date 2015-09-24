@@ -18,6 +18,7 @@ feature "charity can sign in and out" do
     before do
       visit('/')
       click_link('Sign up')
+      fill_in('Organisation title', with: 'RSPCA')
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
       fill_in('Password confirmation', with: 'testtest')
