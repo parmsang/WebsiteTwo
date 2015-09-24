@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= notice %>
+<% if charity_signed_in? %>
+  <%= link_to "Sign out", destroy_charity_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign in", new_charity_session_path %>
+  <%= link_to "Sign up", new_charity_registration_path %>
+<% end %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 
 
