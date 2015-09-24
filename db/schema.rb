@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924110412) do
+ActiveRecord::Schema.define(version: 20150924131338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20150924110412) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "organisation_title"
+    t.string   "status"
+    t.string   "number"
   end
 
   add_index "charities", ["email"], name: "index_charities_on_email", unique: true, using: :btree
@@ -47,4 +49,18 @@ ActiveRecord::Schema.define(version: 20150924110412) do
     t.datetime "image_updated_at"
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.string   "contact_person"
+    t.string   "contact_email"
+    t.integer  "contact_phone"
+    t.string   "project_description"
+    t.string   "thoughts"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "charity_id"
+  end
+
+  add_index "requests", ["charity_id"], name: "index_requests_on_charity_id", using: :btree
+
+  add_foreign_key "requests", "charities"
 end
