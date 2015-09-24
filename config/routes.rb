@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :charities
+  # devise_for :charities
   root 'showcase#index'
 
   get 'showcase' => 'showcase#index'
 
   resources :projects
-  
+
+  devise_for :charities
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

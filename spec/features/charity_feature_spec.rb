@@ -13,7 +13,7 @@ feature "charity can sign in and out" do
       expect(page).not_to have_link('Sign out')
     end
   end
-
+# Are you a charity or non-profit organisation?
   context "Charity signed in on the homepage" do
     before do
       visit('/')
@@ -22,6 +22,8 @@ feature "charity can sign in and out" do
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
       fill_in('Password confirmation', with: 'testtest')
+      fill_in('Are you a charity or non-profit organisation?', with: 'charity')
+      fill_in('Charity Number or NonProfit Company Number', with: '007')
       click_button('Sign up')
     end
 
