@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :charities
   root 'showcase#index'
 
   get 'showcase' => 'showcase#index'
