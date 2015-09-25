@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'showcase' => 'showcase#index'
 
   resources :projects
+  resources :requests
 
   devise_for :charities
   # The priority is based upon order of creation: first created -> highest priority.

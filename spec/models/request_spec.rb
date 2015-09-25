@@ -18,18 +18,13 @@ describe Request, type: :model do
     expect(request).to have(1).error_on(:project_description)
   end
 
-  it 'is not valid unless it has a thoughts' do
-    request = Request.create(thoughts: '')
-    expect(request).to have(1).error_on(:thoughts)
+  it 'is not valid unless it has an organisation name' do
+    request = Request.create(organisation_name: '')
+    expect(request).to have(1).error_on(:organisation_name)
   end
 
   it 'is not valid unless it has a meeting frequency' do
     request = Request.create(meeting_frequency: '')
     expect(request).to have(1).error_on(:meeting_frequency)
-  end
-
-  it 'is not valid unless it has a expected duration' do
-    request = Request.create(expected_duration: '')
-    expect(request).to have(1).error_on(:expected_duration)
   end
 end
