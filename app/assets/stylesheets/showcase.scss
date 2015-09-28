@@ -1,3 +1,44 @@
 // Place all the styles related to the showcase controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+   background-color: black;
+   font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+   font-size: 15px;
+   color: #545353;
+   width: 100%;
+
+}
+
+a:link {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #A8A6A7;
+  border-radius: 3px;
+  padding: 4px;
+
+}
+
+a:hover {
+  background-color: #3d3d3d;
+  color: white;
+  box-shadow: 0 1px 0 #666, 0 3px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+}
+
+.site_link {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.showcase_project {
+  background-color: #545353;
+  border: 1px solid #545353;
+  border-radius: 25px;
+  padding: 10px;
+  width: 75%;
+  margin-bottom: 15px;
+  text-align: center;
+  color: white;
+
+}
