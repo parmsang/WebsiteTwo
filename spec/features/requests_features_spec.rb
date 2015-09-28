@@ -50,28 +50,25 @@ feature 'requests' do
       visit '/requests'
       expect(page).not_to have_link("Edit oxfam")
     end
-  #
-  #   scenario 'there is a form with the previous information' do
-  #     visit '/'
-  #     click_link 'Edit oxfam'
-  #     expect(page).to have_field("Title", with: @charity.title )
-  #     expect(page).to have_field("Description", with: @charity.description )
-  #     expect(page).to have_field("Link", with: @charity.link )
-  #   end
-  #
-  #   scenario 'can edit showcase' do
-  #     visit '/'
-  #     click_link 'Edit oxfam'
-  #     fill_in 'Title', with: 'nspca'
-  #     fill_in 'Description', with: 'help me!'
-  #     fill_in 'Link', with: 'www.wwf.com'
-  #     attach_file 'charity_image', Rails.root.join('spec/fixtures/other_photo.png')
-  #     click_button 'Edit charity'
-  #     expect(page).to have_content('nspca')
-  #     expect(page).to have_link("view more", href: 'www.wwf.com')
-  #     expect(page).to have_content('help me!')
-  #     expect(page).to have_xpath "//img[contains(@src,'other_photo.png')]"
-  #   end
+
+    scenario 'there is a form with the previous information' do
+      click_link 'Edit oxfam'
+      expect(page).to have_field('Organisation title', with: 'oxfam')
+      expect(page).to have_field('Project description', with: 'I am a charity in need please help')
+      expect(page).to have_field('Email', with: 'test@example.com')
+    end
+
+    scenario 'can edit showcase' do
+      click_link 'Edit oxfam'
+      fill_in 'Organisation title', with: 'nspca'
+      fill_in 'Project description', with: 'help me!'
+      fill_in 'Email', with: 'josh@makers.com'
+      fill_in 'Current password', with: 'testtest'
+      click_button 'Update'
+      expect(page).to have_content('nspca')
+      expect(page).to have_content('help me!')
+      expect(page).to have_content('josh@makers.com')
+    end
   end
   #
   # context 'can delete charities from showcase' do

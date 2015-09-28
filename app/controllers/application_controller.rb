@@ -10,9 +10,14 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:organisation_title, :project_description]
+    devise_parameter_sanitizer.for(:account_update) << [:organisation_title, :project_description]
   end
 
   def after_sign_in_path_for(resource)
+    '/requests'
+  end
+
+  def signed_in_root_path(resource)
     '/requests'
   end
 
