@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background-color: #545353;
+    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+    font-size: 15px;
+    color: white;
+
+ }
