@@ -7,13 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<img src="http://www.agileventures.org/assets/av-logo-inverse-ff2a2ad21ab17e758cb85303021ec0c9.png">
+<div class="menubar">
+<div id="logo"><img src="http://www.agileventures.org/assets/av-logo-inverse-ff2a2ad21ab17e758cb85303021ec0c9.png"></div>
 <div id="signin"><% if charity_signed_in? %>
   <%= link_to "Sign out", destroy_charity_session_path, method: :delete %>
 <% else %>
   <%= link_to "Sign in", new_charity_session_path %>
   <%= link_to "Sign up", new_charity_registration_path %>
 <% end %>
+</div>
+<div id="nav">Help me with my project - View open projects</div>
 </div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
