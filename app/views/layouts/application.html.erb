@@ -16,7 +16,7 @@
   <%= link_to "Sign up", new_charity_registration_path %>
 <% end %>
 </div>
-<div id="nav">Help me with my project - View open projects</div>
+<div id="nav"><%= link_to "Request help for your charity", new_charity_registration_path %> &nbsp; <%= link_to "View open projects", requests_path %></div>
 </div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
