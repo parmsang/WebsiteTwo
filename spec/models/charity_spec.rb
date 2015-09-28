@@ -8,9 +8,9 @@ describe Charity, type: :model do
     expect(charity).to have(1).error_on(:organisation_title)
   end
 
-  it 'is not valid unless it has a status' do
-    charity = Charity.create(status: '')
-    expect(charity).to have(1).error_on(:status)
+  it 'is not valid unless it has a project description' do
+    charity = Charity.create(project_description: '')
+    expect(charity).to have(1).error_on(:project_description)
   end
 
 end
