@@ -6,6 +6,6 @@ class Charity < ActiveRecord::Base
 
 
   has_many :requests, dependent: :destroy
-  validates_presence_of :organisation_title, :status
+  validates_presence_of :organisation_title, :project_description
 
 end
