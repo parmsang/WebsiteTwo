@@ -10,7 +10,7 @@ body {
 
 }
 
-a:link {
+a {
   color: white;
   font-weight: bold;
   text-decoration: none;
@@ -32,13 +32,19 @@ a:hover {
 }
 
 .showcase_project {
+  margin: 0px auto;
   background-color: #545353;
   border: 1px solid #545353;
   border-radius: 25px;
   padding: 10px;
   width: 75%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
   color: white;
 
+
+}
+
+#signin {
+  float: right;
 }
