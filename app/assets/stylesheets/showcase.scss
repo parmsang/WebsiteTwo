@@ -2,10 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-   background-color: black;
+   background-color: #B6FCD5;
    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
    font-size: 15px;
    color: white;
+   text-shadow: 1px 1px gray;
    width: 100%;
    margin-top: 60px;
    text-align: center;
@@ -44,8 +45,8 @@ a:hover {
 
 .showcase_project {
   margin: 0px auto;
-  background-color: #545353;
-  border:5px solid #545353;
+  background-color: #20BF9F;
+  border:5px solid #20BF9F;
   border-radius: 25px;
   padding: 10px;
   width: 75%;
@@ -54,6 +55,26 @@ a:hover {
   color: white;
 
 }
+
+.form_container {
+  margin: 0 auto;
+  padding: 25px;
+  width: 25%;
+  font-size: 125%;
+  text-align: left;
+  border: 5px solid;
+  border-radius: 25px;
+  background-color: #7e7e7e;
+}
+.form_item {
+  padding-bottom: 5px;
+}
+
+.form_label {
+  padding-top: 7px;
+}
+
+
 
 #signin {
   float: right;

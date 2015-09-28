@@ -1,10 +1,13 @@
 <%= form_for @project, html: {multipart: true} do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
+  <div class="form_container">
+    <div class="form_label"><%= f.label :title %></div>
+    <div class="form_item"><%= f.text_field :title, size: "40" %></div>
+    <div class="form_label"><%= f.label :description %></div>
+    <div class="form_item"><%= f.text_area :description, size: "38x8" %></div>
+    <div class="form_label"><%= f.label :link %></div>
+    <div class="form_item"><%= f.text_field :link, size: "40" %></div>
+    <div class="form_label"><%= f.label :image %></div>
+    <div class="form_item"><%= f.file_field :image %></div>
+    <div class="form_label"><%= f.submit %></div>
+</div>
 <% end %>

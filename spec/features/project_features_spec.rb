@@ -23,7 +23,7 @@ feature 'showcase' do
       visit '/'
       expect(page).to have_content('oxfam')
       expect(page).not_to have_content('No projects in showcase!')
-      expect(page).to have_link("view more", href: 'www.zombo.com')
+      expect(page).to have_link("Visit Site", href: 'www.zombo.com')
       expect(page).to have_content('blah-blah')
       expect(page).to have_xpath "//img[contains(@src,'test_photo.png')]"
     end
@@ -41,7 +41,7 @@ feature 'showcase' do
       expect(page).to have_content 'Red Cross'
       expect(page).to have_content 'Helps people'
       expect(page).to have_xpath("//img[contains(@src,'test_photo.png')]")
-      expect(page).to have_link("view more", href: 'www.zombo.com')
+      expect(page).to have_link("Visit Site", href: 'www.zombo.com')
       expect(current_path).to eq '/'
     end
     context 'it displays error when title/description/link is not valid' do
@@ -87,7 +87,7 @@ feature 'showcase' do
       attach_file 'project_image', Rails.root.join('spec/fixtures/other_photo.png')
       click_button 'Edit Project'
       expect(page).to have_content('nspca')
-      expect(page).to have_link("view more", href: 'www.wwf.com')
+      expect(page).to have_link("Visit Site", href: 'www.wwf.com')
       expect(page).to have_content('help me!')
       expect(page).to have_xpath "//img[contains(@src,'other_photo.png')]"
     end
