@@ -1,0 +1,12 @@
+<h1>Get free help developing websites for your charity</h1>
+<h3>Please see below other projects AgileVentures has helped in the past.</h3> <%= link_to "Request help for your charity", new_charity_registration_path %>
+
+<% if @charities.any? %>
+  <% @charities.each do |charity| %>
+  <%= render partial: 'partials/charity', locals: {charity: charity} %>
+<% end %>
+<% else %>
+  <h1>No requests for help!</h1>
+<% end %>
+
+<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path %></h1>
