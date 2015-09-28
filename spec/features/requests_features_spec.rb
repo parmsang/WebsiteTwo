@@ -71,30 +71,31 @@ feature 'requests' do
     end
   end
   #
-  # context 'can delete charities from showcase' do
-  #
-  #   before do
-  #     @charity = charity.new(title: 'oxfam')
-  #     @charity.link = 'www.zombo.com'
-  #     @charity.description = 'blah-blah'
-  #     @charity.image = Rack::Test::UploadedFile.new('spec/fixtures/test_photo.png', 'image/png')
-  #     @charity.save
-  #   end
-  #
-  #   scenario 'have an option to delete' do
-  #     visit '/'
-  #     click_link 'Edit oxfam'
-  #     expect(page).to have_link 'Delete oxfam'
-  #   end
-  #
-  #   scenario 'can delete charity' do
-  #     visit '/'
-  #     click_link 'Edit oxfam'
-  #     expect{click_link 'Delete oxfam'}.to change(charity, :count).by(-1)
-  #     expect(page).to have_content 'charity successfully deleted'
-  #     expect(page).to have_content 'No charities in showcase!'
-  #   end
+  context 'can close open projects' do
 
-  # end
+    before do
+      visit '/'
+      click_link('Click here to request help for your charity')
+      fill_in('Organisation title', with: 'oxfam')
+      fill_in('Email', with: 'test@example.com')
+      fill_in('Password', with: 'testtest')
+      fill_in('Password confirmation', with: 'testtest')
+      fill_in('Project description', with: 'I am a charity in need please help')
+      click_button('Sign up')
+    end
+
+    scenario 'have an option to close project' do
+      visit '/requests'
+      click_link 'Edit oxfam'
+      expect(page).to have_button 'Close Project'
+    end
+
+    scenario 'can delete charity' do
+      click_link 'Edit oxfam'
+      expect{click_button 'Close Project'}.to change(Charity, :count).by(-1)
+      expect(page).to have_content 'Your account has been successfully cancelled'
+    end
+
+  end
 
 end
