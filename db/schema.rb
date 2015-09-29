@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928094453) do
+ActiveRecord::Schema.define(version: 20150929093408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 20150928094453) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "organisation_title"
-    t.string   "status"
-    t.string   "number"
     t.text     "project_description"
   end
 
@@ -50,21 +48,4 @@ ActiveRecord::Schema.define(version: 20150928094453) do
     t.datetime "image_updated_at"
   end
 
-  create_table "requests", force: :cascade do |t|
-    t.string   "contact_person"
-    t.string   "contact_email"
-    t.integer  "contact_phone"
-    t.string   "project_description"
-    t.string   "thoughts"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.integer  "charity_id"
-    t.string   "meeting_frequency"
-    t.string   "expected_duration"
-    t.string   "organisation_name"
-  end
-
-  add_index "requests", ["charity_id"], name: "index_requests_on_charity_id", using: :btree
-
-  add_foreign_key "requests", "charities"
 end
