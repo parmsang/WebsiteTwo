@@ -4,4 +4,8 @@ class RequestsController < ApplicationController
     @charities = Charity.all.reverse
   end
 
+  def show
+    @charity = Charity.find(params[:id])
+  end
+
 end

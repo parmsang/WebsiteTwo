@@ -38,8 +38,8 @@ feature "charity can sign in and out" do
       expect(page).not_to have_link('Sign up')
     end
 
-    scenario 'should take us to the open projects showcase' do
-      expect(current_path).to eq '/requests'
+    scenario 'should take us to the charity\'s page' do
+      expect(current_path).to eq '/requests/3'
     end
 
   end
