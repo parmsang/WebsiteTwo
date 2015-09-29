@@ -1,3 +1,4 @@
+<div class="center_container"
 <% if @charities.any? %>
   <% @charities.each do |charity| %>
   <%= render partial: 'partials/charity', locals: {charity: charity} %>
@@ -5,5 +6,6 @@
 <% else %>
   <h1>No requests for help!</h1>
 <% end %>
+</div>
 
 <h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
