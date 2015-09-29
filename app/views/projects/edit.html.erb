@@ -1,11 +1,14 @@
-<%= form_for @project do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-  <%= f.file_field :image %>
-  <%= f.submit 'Edit Project'%>
-<% end %>
-<%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete %>
+<div class="form_container">
+  <%= form_for @project do |f| %>
+    <div class="form_label"><%= f.label :title %></div>
+    <div class="form_item"><%= f.text_field :title, size: "40" %></div>
+    <div class="form_label"><%= f.label :description %></div>
+    <div class="form_item"><%= f.text_area :description, size: "39x8" %></div>
+    <div class="form_label"><%= f.label :link %></div>
+    <div class="form_item"><%= f.text_field :link, size: "40" %></div>
+    <div class="form_label"><%= f.label :image %></div>
+    <div class="form_item"><%= f.file_field :image %></div>
+    <div class="form_label"><%= f.submit "Edit Project" %></div>
+  <% end %>
+  <div class="form_item"><%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete %></div>
+</div>
