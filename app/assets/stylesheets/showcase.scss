@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-   background-color: #B6FCD5;
+   background-color: black;
    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
    font-size: 15px;
    color: white;
@@ -11,6 +11,7 @@ body {
    margin-top: 60px;
    text-align: center;
 }
+
 
 .menubar {
   padding-top: 15px;
@@ -36,6 +37,17 @@ a:hover {
   background-color: #3d3d3d;
   color: white;
   box-shadow: 0 1px 0 #666, 0 3px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+}
+
+#logo {
+  float: left;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+a img {
+  text-decoration: none;
+  float: left;
 }
 
 .site_link {
@@ -75,7 +87,6 @@ a:hover {
 }
 
 
-
 #signin {
   float: right;
   padding-right: 5px;
@@ -83,9 +94,4 @@ a:hover {
 
 #nav {
   text-align: center;
-}
-
-
-#logo {
-  float: left;
 }
