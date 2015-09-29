@@ -1,42 +1,49 @@
-<div class="form_container">
-  <h2>Sign up</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+<div class="sign_up_page">
+  <div class="form_container">
+    <h2>Sign up</h2>
 
-    <div class="field">
-      <div class="form_label"><%= f.label :organisation_title %></div>
-      <div class="form_item"><%= f.text_field :organisation_title, size: "40", autofocus: true %></div>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <div class="form_label"><%= f.label :organisation_title %></div>
+        <div class="form_item"><%= f.text_field :organisation_title, size: "40", autofocus: true %></div>
+      </div>
+
+      <div class="field">
+        <div class="form_label"><%= f.label :project_description %></div>
+        <div class="form_item"><%= f.text_area :project_description, size: "39x8", autofocus: true %></div>
+      </div>
+
+      <div class="field">
+        <div class="form_label"><%= f.label :email %></div>
+        <div class="form_item"><%= f.email_field :email, size: "40", autofocus: true %></div>
+      </div>
+
+      <div class="field">
+        <div class="form_label"><%= f.label :password %></div>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <div class="form_item"><%= f.password_field :password, size: "40", autocomplete: "off" %></div>
+      </div>
+
+      <div class="field">
+        <div class="form_label"><%= f.label :password_confirmation %></div>
+        <div class="form_item"><%= f.password_field :password_confirmation, size: "40", autocomplete: "off" %></div>
+      </div>
+
+      <div class="actions">
+        <div class="form_label"><%= f.submit "Sign up" %></div>
+      </div>
+    <% end %>
     </div>
+    <div class="text_container">
+      <div id="prompt">Please provide us with as much information as possible so we can best assist you. </div>
 
-    <div class="field">
-      <div class="form_label"><%= f.label :project_description %></div>
-      <div class="form_item"><%= f.text_area :project_description, size: "39x8", autofocus: true %></div>
-    </div>
-
-    <div class="field">
-      <div class="form_label"><%= f.label :email %></div>
-      <div class="form_item"><%= f.email_field :email, size: "40", autofocus: true %></div>
-    </div>
-
-    <div class="field">
-      <div class="form_label"><%= f.label :password %></div>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <div class="form_item"><%= f.password_field :password, size: "40", autocomplete: "off" %></div>
-    </div>
-
-    <div class="field">
-      <div class="form_label"><%= f.label :password_confirmation %></div>
-      <div class="form_item"><%= f.password_field :password_confirmation, size: "40", autocomplete: "off" %></div>
-    </div>
-
-    <div class="actions">
-      <div class="form_label"><%= f.submit "Sign up" %></div>
-    </div>
-  <% end %>
-
-  <div class="form_label">Tips: For writing a good project description make sure you include how
-    often you can meet developers for coordination meetings, over what duration you expect to require help.</div>
+      <div id="prompt">If possible include in your project description how
+      often you can meet developers for coordination meetings and over what duration you expect to require help.</div>
+  </div>
 </div>

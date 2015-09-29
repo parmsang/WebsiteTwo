@@ -1,5 +1,6 @@
+<div class="sign_up_page">
 <%= form_for @project, html: {multipart: true} do |f| %>
-  <div class="form_container">
+  <div class="center_container">
     <div class="form_label"><%= f.label :title %></div>
     <div class="form_item"><%= f.text_field :title, size: "40" %></div>
     <div class="form_label"><%= f.label :description %></div>
@@ -11,3 +12,4 @@
     <div class="form_label"><%= f.submit %></div>
   </div>
 <% end %>
+</div>
