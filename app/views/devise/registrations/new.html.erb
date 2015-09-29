@@ -1,5 +1,8 @@
+
+<div class="sign_up_page">
 <div class="form_container">
   <h2>Sign up</h2>
+
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -36,8 +39,12 @@
       <div class="form_label"><%= f.submit "Sign up" %></div>
     </div>
   <% end %>
+</div>
 
-  <!-- <%= render "devise/shared/links" %> -->
-  <div class="form_label">Tips: For writing a good project description make sure you include how
-    often you can meet developers for coordination meetings, over what duration you expect to require help.</div>
+  <div class="text_container">
+    <div id="prompt">Please provide us with as much information as possible so we can best assist you. </div>
+
+    <div id="prompt">If possible include in your project description how
+    often you can meet developers for coordination meetings and over what duration you expect to require help.</div>
+</div>
 </div>
