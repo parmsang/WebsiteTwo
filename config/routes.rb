@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'showcase#index'
 
   get 'showcase' => 'showcase#index'
+  get 'about' => 'about#index'
 
   resources :projects
   resources :requests
