@@ -1,4 +1,4 @@
-<h1><%= link_to "Request help for your charity", new_charity_registration_path %></h1>
+<h1><%= link_to "Request help for your charity", new_charity_registration_path, class: "button" %></h1>
 <h1>Charities we have helped</h1>
 
 <% if @projects.any? %>
@@ -9,5 +9,5 @@
   <h1>No projects in showcase!</h1>
 <% end %>
 
-<a href='projects/new'>Add a project</a>
-<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path %></h1>
+<a href='projects/new' class="button">Add a project</a>
+<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>

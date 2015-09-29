@@ -2,5 +2,5 @@
 <p><%= charity.project_description %></p>
 <p>Contact Email:<%= charity.email %></p>
 <% if charity == current_charity %>
-  <%= link_to "Edit #{charity.organisation_title}", edit_charity_registration_path(charity.id) %>
+  <%= link_to "Edit #{charity.organisation_title}", edit_charity_registration_path(charity.id), class: "button" %>
 <% end %>

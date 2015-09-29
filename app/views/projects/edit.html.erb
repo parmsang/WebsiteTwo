@@ -10,5 +10,5 @@
     <div class="form_item"><%= f.file_field :image %></div>
     <div class="form_label"><%= f.submit "Edit Project" %></div>
   <% end %>
-  <div class="form_item"><%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete %></div>
+  <div class="form_item"><%= link_to "Delete #{@project.title}", project_path(@project.id), method: :delete, class: "button" %></div>
 </div>
