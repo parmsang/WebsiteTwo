@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-   background-color: #D3D3D3;
+   background-color: black;
    background-image: url("codingbackground.png");
    font-family: 'Century Gothic', Verdana;
    font-size: 15px;
-   color: #4f4f51;
+   color: white;
    width: 100%;
    margin-top: 60px;
    text-align: center;
@@ -33,7 +33,7 @@ body {
 }
 
 .button:hover {
-  background-color:#5D92B1;
+  background-color: #5D92B1;
   color: white;
   box-shadow: 0 1px 0 #666, 0 3px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
 }
@@ -56,14 +56,14 @@ a img {
 
 .showcase_project {
   margin: 0px auto;
-  background-color: #7e7e7e;
-  border:5px solid #7e7e7e;
+  background-color: #5D92B1;
   border-radius: 25px;
   padding: 10px;
   width: 75%;
   margin-bottom: 20px;
   text-align: center;
   color: white;
+  opacity: .8;
 
 }
 
@@ -103,12 +103,14 @@ a img {
   text-align: left;
   border-radius: 25px;
   background-color: #5D92B1;
+
 }
 
 .sign_up_page {
 
   width: 60%;
   margin: 0px auto;
+  opacity: .85;
 }
 
 #prompt {
@@ -117,6 +119,29 @@ a img {
 
 #forgotten_password {
   margin-top: 20px;
+}
+
+.about_us {
+  color: white;
+  margin: 0 auto;
+  padding: 20px;
+  width: 70%;
+  font-size: 125%;
+  text-align: left;
+  border-radius: 25px;
+  background-color: #5D92B1;
+  opacity: 0.8;
+}
+
+.profile_container {
+  color: white;
+  padding: 25px;
+  width: 40%;
+  font-size: 100%;
+  text-align: left;
+  border-radius: 25px;
+  background-color: #5D92B1;
+  opacity: 0.85;
 }
 
 .center_container {
@@ -128,10 +153,11 @@ a img {
   text-align: left;
   border-radius: 25px;
   background-color: #5D92B1;
-  opacity: 1.0;
+  opacity: 0.85;
 }
 
 .simple_link {
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: underline;
+  font-size: 35px;
 }
