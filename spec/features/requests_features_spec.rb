@@ -26,6 +26,11 @@ feature 'requests' do
       expect(page).to have_content('blah-blah')
       expect(page).to have_content('sam@makers.com')
     end
+
+    scenario 'the charity title is a link to the charity page' do
+      visit '/requests'
+      expect(page).to have_link("oxfam", href: "/requests/5")
+    end
   end
 
   context 'editing charities' do
@@ -40,18 +45,21 @@ feature 'requests' do
       fill_in('Project description', with: 'I am a charity in need please help')
       click_button('Sign up')
     end
-  #
+  
     scenario 'have the option for edit when signed in as charity' do
+      visit '/requests'
       expect(page).to have_link("Edit oxfam")
     end
 
     scenario 'NOT have the option for edit when NOT signed in as charity' do
+      visit '/requests'
       click_link 'Sign out'
       visit '/requests'
       expect(page).not_to have_link("Edit oxfam")
     end
 
     scenario 'there is a form with the previous information' do
+      visit '/requests'
       click_link 'Edit oxfam'
       expect(page).to have_field('Organisation title', with: 'oxfam')
       expect(page).to have_field('Project description', with: 'I am a charity in need please help')
@@ -59,6 +67,7 @@ feature 'requests' do
     end
 
     scenario 'can edit showcase' do
+      visit '/requests'
       click_link 'Edit oxfam'
       fill_in 'Organisation title', with: 'nspca'
       fill_in 'Project description', with: 'help me!'
@@ -91,6 +100,7 @@ feature 'requests' do
     end
 
     scenario 'can delete charity' do
+      visit '/requests'
       click_link 'Edit oxfam'
       expect{click_button 'Close Project'}.to change(Charity, :count).by(-1)
       expect(page).to have_content 'Your account has been successfully cancelled'
@@ -98,4 +108,24 @@ feature 'requests' do
 
   end
 
+  context 'can view individual charity' do
+
+    before do
+      visit '/'
+      click_link('Click here to request help for your charity')
+      fill_in('Organisation title', with: 'oxfam')
+      fill_in('Email', with: 'test@example.com')
+      fill_in('Password', with: 'testtest')
+      fill_in('Password confirmation', with: 'testtest')
+      fill_in('Project description', with: 'I am a charity in need please help')
+      click_button('Sign up')
+    end
+
+    scenario 'everything is on the page' do
+      expect(page).to have_content('oxfam')
+      expect(page).to have_content('I am a charity in need please help')
+      expect(page).to have_content('test@example.com')
+    end
+
+  end
 end

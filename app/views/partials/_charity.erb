@@ -1,4 +1,4 @@
-<h2><%= charity.organisation_title %></h2>
+<h2><%= link_to "#{charity.organisation_title}", request_path(charity.id), class: "simple_link" %></a></h2>
 <p><%= charity.project_description %></p>
 <p>Contact Email:<%= charity.email %></p>
 <% if charity == current_charity %>
