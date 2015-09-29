@@ -6,4 +6,7 @@
   <h1>No requests for help!</h1>
 <% end %>
 
-<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% if charity_signed_in? %>
+  <% else %>
+  <h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% end %>
