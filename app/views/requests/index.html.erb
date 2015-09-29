@@ -8,4 +8,7 @@
 <% end %>
 </div>
 
-<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% if charity_signed_in? %>
+  <% else %>
+  <h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% end %>
