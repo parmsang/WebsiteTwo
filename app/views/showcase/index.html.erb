@@ -1,4 +1,8 @@
-<h1><%= link_to "Request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% if charity_signed_in? %>
+  <% else %>
+  <h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% end %>
+
 <h1>Charities we have helped</h1>
 
 <% if @projects.any? %>
@@ -10,4 +14,8 @@
 <% end %>
 
 <a href='projects/new' class="button">Add a project</a>
-<h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+
+<% if charity_signed_in? %>
+  <% else %>
+  <h1><%= link_to "Click here to request help for your charity", new_charity_registration_path, class: "button" %></h1>
+<% end %>
