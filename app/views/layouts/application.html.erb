@@ -13,7 +13,7 @@
   <%= link_to "About us", about_path, class: "simple_link" %>
   <%= link_to "Charities", requests_path, class: "simple_link" %>
   <% if charity_signed_in? %>
-    <%= link_to "Sign out", destroy_charity_session_path, method: :delete, class: "button" %>
+    <%= link_to "Sign out", destroy_charity_session_path, method: :delete, class: "simple_link" %>
   <% else %>
     <%= link_to "Sign in", new_charity_session_path, class: "simple_link" %>
     <%= link_to "Sign up", new_charity_registration_path, class: "simple_link" %>
