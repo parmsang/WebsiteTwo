@@ -106,13 +106,13 @@ feature 'showcase' do
     scenario 'have an option to delete' do
       visit '/'
       click_link 'Edit oxfam'
-      expect(page).to have_link 'Delete oxfam'
+      expect(page).to have_link('trash')
     end
 
     scenario 'can delete project' do
       visit '/'
       click_link 'Edit oxfam'
-      expect{click_link 'Delete oxfam'}.to change(Project, :count).by(-1)
+      expect{click_link 'trash'}.to change(Project, :count).by(-1)
       expect(page).to have_content 'Project successfully deleted'
       expect(page).to have_content 'No projects in showcase!'
     end
