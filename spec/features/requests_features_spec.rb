@@ -6,7 +6,7 @@ feature 'requests' do
     scenario 'should display a prompt to add a charity' do
       visit '/requests'
       expect(page).to have_content 'No requests for help!'
-      expect(page).to have_link 'Click here to request help for your charity'
+      expect(page).to have_link 'Request help for your charity'
     end
   end
 
@@ -37,7 +37,7 @@ feature 'requests' do
 
     before do
       visit '/'
-      click_link('Click here to request help for your charity')
+      click_link('Request help for your charity')
       fill_in('Organisation title', with: 'oxfam')
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
@@ -45,7 +45,7 @@ feature 'requests' do
       fill_in('Project description', with: 'I am a charity in need please help')
       click_button('Sign up')
     end
-  
+
     scenario 'have the option for edit when signed in as charity' do
       visit '/requests'
       expect(page).to have_link("Edit oxfam")
@@ -84,7 +84,7 @@ feature 'requests' do
 
     before do
       visit '/'
-      click_link('Click here to request help for your charity')
+      click_link('Request help for your charity')
       fill_in('Organisation title', with: 'oxfam')
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')
@@ -112,7 +112,7 @@ feature 'requests' do
 
     before do
       visit '/'
-      click_link('Click here to request help for your charity')
+      click_link('Request help for your charity')
       fill_in('Organisation title', with: 'oxfam')
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')

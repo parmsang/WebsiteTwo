@@ -6,7 +6,7 @@ feature "charity can sign in and out" do
       visit('/')
       expect(page).to have_link('Sign in')
       expect(page).to have_link('Sign up')
-      expect(page).to have_link('Click here to request help for your charity')
+      expect(page).to have_link('Request help for your charity')
     end
 
     scenario "should not see 'sign out' link" do
@@ -18,7 +18,7 @@ feature "charity can sign in and out" do
   context "Charity signed in on the homepage" do
     before do
       visit('/')
-      click_link('Click here to request help for your charity')
+      click_link('Request help for your charity')
       fill_in('Organisation title', with: 'RSPCA')
       fill_in('Email', with: 'test@example.com')
       fill_in('Password', with: 'testtest')

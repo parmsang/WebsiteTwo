@@ -2,6 +2,6 @@
   <h2><%= project.title %></h2>
 <div><img src="<%= project.image %>"></div>
 <div><%= project.description %></div>
-<div class="site_link"><a href="<%= project.link %>" class="button">Visit Site</a></div>
+<div class="site_link"><a href="<%= project.link %>" class="simple_link">Visit Site</a></div>
 <%= link_to "Edit #{project.title}", edit_project_path(project.id), class: "button" %>
 </div>
