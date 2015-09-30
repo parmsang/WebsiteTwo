@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
    background-color: black;
-   background-image: url("codingbackground.png");
+   background-image: url(asset_path('codingbackground.png'));
+   background-attachment: fixed;
    font-family: 'Century Gothic', Verdana;
    font-size: 16px;
    line-height: 24px;
