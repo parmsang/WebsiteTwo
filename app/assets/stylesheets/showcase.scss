@@ -70,6 +70,7 @@ a img {
 }
 
 .form_container {
+  display: inline-block;
   margin: 0 auto;
   padding: 25px;
   width: 22%;
@@ -79,6 +80,12 @@ a img {
   background-color: #5D92B1;
   opacity: .85;
 }
+
+#spacing {
+  display: inline-block;
+  width: 15%;
+}
+
 .form_item {
   padding-bottom: 10px;
 }
@@ -98,9 +105,11 @@ a img {
 
 .text_container {
   float: right;
-  margin-left: 20px;
+  margin-right: 20%;
+  // display: inline-block;
+  // margin-left: 20px;
   padding: 25px;
-  width: 35%;
+  width: 30%;
   font-size: 125%;
   text-align: left;
   border-radius: 25px;
@@ -110,9 +119,7 @@ a img {
 }
 
 .sign_up_page {
-
-  width: 60%;
-  margin: 0px auto;
+  width: 100%;
   opacity: .85;
 }
 
@@ -152,7 +159,7 @@ a img {
   color: white;
   margin: 0 auto;
   padding: 25px;
-  width: 70%;
+  width: 22%;
   font-size: 125%;
   margin-bottom: 20px;
   text-align: left;
