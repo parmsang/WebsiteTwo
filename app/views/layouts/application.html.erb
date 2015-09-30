@@ -10,16 +10,16 @@
 <div class="menubar">
 <div id="logo"><a href="/"><img src="http://www.agileventures.org/assets/av-logo-inverse-ff2a2ad21ab17e758cb85303021ec0c9.png"></a></div>
 <div id="signin">
-  <%= link_to "About us", about_path, class: "button" %>
-  <%= link_to "View other requests", requests_path, class: "button" %>
+  <%= link_to "About us", about_path, class: "simple_link" %>
+  <%= link_to "View other requests", requests_path, class: "simple_link" %>
   <% if charity_signed_in? %>
     <%= link_to "Sign out", destroy_charity_session_path, method: :delete, class: "button" %>
   <% else %>
-    <%= link_to "Sign in", new_charity_session_path, class: "button" %>
-    <%= link_to "Sign up", new_charity_registration_path, class: "button" %>
+    <%= link_to "Sign in", new_charity_session_path, class: "simple_link" %>
+    <%= link_to "Sign up", new_charity_registration_path, class: "simple_link" %>
   <% end %>
 </div>
-<!-- <div id="nav"></div> -->
+
 </div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
