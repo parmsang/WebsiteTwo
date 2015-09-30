@@ -2,8 +2,8 @@
 <% if @charities.any? %>
   <% @charities.each do |charity| %>
   <div class="center_container">
-  <%= render partial: 'partials/charity', locals: {charity: charity} %>
-</div>
+    <%= render partial: 'partials/charity', locals: {charity: charity} %>
+  </div>
 <% end %>
 <% else %>
   <h1>No requests for help!</h1>

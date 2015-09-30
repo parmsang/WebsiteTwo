@@ -66,10 +66,11 @@ a img {
   text-align: center;
   color: white;
   opacity: .8;
-
+  overflow: hidden;
 }
 
 .form_container {
+  display: inline-block;
   margin: 0 auto;
   padding: 25px;
   width: 22%;
@@ -79,6 +80,12 @@ a img {
   background-color: #5D92B1;
   opacity: .85;
 }
+
+#spacing {
+  display: inline-block;
+  width: 15%;
+}
+
 .form_item {
   padding-bottom: 10px;
 }
@@ -98,9 +105,11 @@ a img {
 
 .text_container {
   float: right;
-  margin-left: 20px;
+  margin-right: 20%;
+  // display: inline-block;
+  // margin-left: 20px;
   padding: 25px;
-  width: 35%;
+  width: 30%;
   font-size: 125%;
   text-align: left;
   border-radius: 25px;
@@ -110,9 +119,7 @@ a img {
 }
 
 .sign_up_page {
-
-  width: 60%;
-  margin: 0px auto;
+  width: 100%;
   opacity: .85;
 }
 
@@ -146,19 +153,21 @@ a img {
   border-radius: 25px;
   background-color: #5D92B1;
   opacity: 0.85;
+  overflow: hidden;
 }
 
 .center_container {
   color: white;
   margin: 0 auto;
   padding: 25px;
-  width: 70%;
+  width: 22%;
   font-size: 125%;
   margin-bottom: 20px;
   text-align: left;
   border-radius: 25px;
   background-color: #5D92B1;
   opacity: 0.85;
+  overflow: hidden;
 }
 
 .simple_link {
@@ -176,4 +185,15 @@ a img {
 #help_link {
   font-size: 300%;
   padding: 40px;
+}
+
+.edit_link {
+  float: right;
+  height: 30px;
+  position: static;
+  display: inline-block;
+}
+
+.delete_button {
+  color: inherit;
 }
