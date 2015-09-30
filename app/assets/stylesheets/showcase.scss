@@ -66,7 +66,7 @@ a img {
   text-align: center;
   color: white;
   opacity: .8;
-
+  overflow: hidden;
 }
 
 .form_container {
@@ -153,6 +153,7 @@ a img {
   border-radius: 25px;
   background-color: #5D92B1;
   opacity: 0.85;
+  overflow: hidden;
 }
 
 .center_container {
@@ -166,6 +167,7 @@ a img {
   border-radius: 25px;
   background-color: #5D92B1;
   opacity: 0.85;
+  overflow: hidden;
 }
 
 .simple_link {
@@ -186,14 +188,10 @@ a img {
 }
 
 .edit_link {
-  text-align: right;
-  // float: right;
-  color: inherit;
-  text-decoration: none;
-  font-size: 17px;
-  padding-right: 5px;
-  padding-left: 5px;
-  margin: 0 auto;
+  float: right;
+  height: 30px;
+  position: static;
+  display: inline-block;
 }
 
 .delete_button {
