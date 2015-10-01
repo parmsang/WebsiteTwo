@@ -10,17 +10,17 @@
 
       <div class="field">
         <div class="form_label"><%= f.label :organisation_title %></div>
-        <div class="form_item"><%= f.text_field :organisation_title, size: "40", autofocus: true %></div>
+        <div class="form_item"><%= f.text_field :organisation_title, autofocus: true, id: "form_width" %></div>
       </div>
 
       <div class="field">
         <div class="form_label"><%= f.label :project_description %></div>
-        <div class="form_item"><%= f.text_area :project_description, size: "39x8", autofocus: true %></div>
+        <div class="form_item"><%= f.text_area :project_description, autofocus: true, id: "form_size"  %></div>
       </div>
 
       <div class="field">
         <div class="form_label"><%= f.label :email %></div>
-        <div class="form_item"><%= f.email_field :email, size: "40", autofocus: true %></div>
+        <div class="form_item"><%= f.email_field :email, autofocus: true , id: "form_width" %></div>
       </div>
 
       <div class="field">
@@ -28,12 +28,12 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <div class="form_item"><%= f.password_field :password, size: "40", autocomplete: "off" %></div>
+        <div class="form_item"><%= f.password_field :password, autocomplete: "off", id: "form_width"  %></div>
       </div>
 
       <div class="field">
         <div class="form_label"><%= f.label :password_confirmation %></div>
-        <div class="form_item"><%= f.password_field :password_confirmation, size: "40", autocomplete: "off" %></div>
+        <div class="form_item"><%= f.password_field :password_confirmation, autocomplete: "off", id: "form_width"  %></div>
       </div>
 
       <div class="actions">
