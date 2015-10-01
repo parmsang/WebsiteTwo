@@ -2,11 +2,11 @@
 <%= form_for @project, html: {multipart: true} do |f| %>
   <div class="center_container">
     <div class="form_label"><%= f.label :title %></div>
-    <div class="form_item"><%= f.text_field :title, size: "40" %></div>
+    <div class="form_item"><%= f.text_field :title, id: "form_width" %></div>
     <div class="form_label"><%= f.label :description %></div>
-    <div class="form_item"><%= f.text_area :description, size: "39x8" %></div>
+    <div class="form_item"><%= f.text_area :description, id: "form_size" %></div>
     <div class="form_label"><%= f.label :link %></div>
-    <div class="form_item"><%= f.text_field :link, size: "40" %></div>
+    <div class="form_item"><%= f.text_field :link, id: "form_width" %></div>
     <div class="form_label"><%= f.label :image %></div>
     <div class="form_item"><%= f.file_field :image %></div>
     <div class="form_label"><%= f.submit %></div>
